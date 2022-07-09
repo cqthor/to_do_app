@@ -1,22 +1,30 @@
 class Task {
   int? id;
-  final String name;
+  late String name;
   late bool isFinished;
   late bool isSelected;
   List<SubTasks>? subTasks;
+  late bool isEditing;
+  late bool isAdding;
   Task({
     this.id,
     required this.name,
     required this.isFinished,
     this.subTasks,
     this.isSelected = false,
+    this.isEditing = false,
+    this.isAdding = false,
   });
 }
 
 class SubTasks {
   int? id;
-  final String name;
+  late String name;
   late bool isFinished;
-
-  SubTasks({this.id, required this.name, required this.isFinished});
+  late bool isEditing;
+  SubTasks(
+      {this.id,
+      required this.name,
+      required this.isFinished,
+      this.isEditing = false});
 }
